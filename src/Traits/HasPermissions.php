@@ -36,7 +36,7 @@ trait HasPermissions
      *
      * @return bool
      */
-    public function can($ability): bool
+    public function hasPermission($ability): bool
     {
         if (! $ability) {
             return false;
@@ -61,9 +61,9 @@ trait HasPermissions
      *
      * @return bool
      */
-    public function cannot(string $permission): bool
+    public function hasNoPermission(string $permission): bool
     {
-        return ! $this->can($permission);
+        return ! $this->hasPermission($permission);
     }
 
     /**

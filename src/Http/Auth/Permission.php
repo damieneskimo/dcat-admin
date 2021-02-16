@@ -34,7 +34,7 @@ class Permission
             return true;
         }
 
-        if (Admin::user()->cannot($permission)) {
+        if (Admin::user()->hasNoPermission($permission)) {
             static::error();
         }
     }

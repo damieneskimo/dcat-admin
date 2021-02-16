@@ -4,10 +4,10 @@ namespace Dcat\Admin\Models;
 
 use Dcat\Admin\Traits\HasDateTimeFormatter;
 use Dcat\Admin\Traits\HasPermissions;
-use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 
@@ -16,10 +16,9 @@ use Illuminate\Support\Facades\URL;
  *
  * @property Role[] $roles
  */
-class Administrator extends Model implements AuthenticatableContract
+class Administrator extends Authenticatable
 {
-    use Authenticatable,
-        HasPermissions,
+    use HasPermissions,
         HasDateTimeFormatter;
 
     const DEFAULT_ID = 1;

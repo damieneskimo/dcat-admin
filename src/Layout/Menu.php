@@ -241,7 +241,7 @@ class Menu
         }
 
         foreach (array_merge(Helper::array($permissionIds), $permissions) as $permission) {
-            if ($user->can($permission)) {
+            if ($user->hasPermission($permission)) {
                 return true;
             }
         }
