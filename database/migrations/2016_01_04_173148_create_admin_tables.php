@@ -23,16 +23,6 @@ class CreateAdminTables extends Migration
      */
     public function up()
     {
-        Schema::create($this->config('database.users_table'), function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('username', 120)->unique();
-            $table->string('password', 80);
-            $table->string('name');
-            $table->string('avatar')->nullable();
-            $table->string('remember_token', 100)->nullable();
-            $table->timestamps();
-        });
-
         Schema::create($this->config('database.roles_table'), function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 50);

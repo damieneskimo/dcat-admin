@@ -248,7 +248,7 @@ return [
         'connection' => '',
 
         // User tables and model.
-        'users_table' => 'admin_users',
+        'users_table' => 'users',
         'users_model' => Dcat\Admin\Models\Administrator::class,
 
         // Role table and model.
