@@ -249,7 +249,7 @@ return [
 
         // User tables and model.
         'users_table' => 'users',
-        'users_model' => Dcat\Admin\Models\Administrator::class,
+        'users_model' => App\Models\User::class,
 
         // Role table and model.
         'roles_table' => 'admin_roles',
